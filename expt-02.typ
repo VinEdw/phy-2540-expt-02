@@ -33,8 +33,8 @@
 
 = Results
 
-@tb_misc_quantities contains various quantities, both measured and given, that will be relevant to the analysis.
-They were collected in a table to assist with lookup.
+@tb_misc_quantities contains various quantities, both measured and given, that were relevant to the analysis.
+They are collected in a table to assist with lookup.
 
 #[
   #let T_F = raw_misc_data.at("T")
