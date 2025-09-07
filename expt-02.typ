@@ -22,6 +22,7 @@
 #let m-s2 = zi.declare("m/s^2")
 #let m2 = zi.declare("m^2")
 #let Pa-1 = zi.declare("Pa^-1")
+#let mPa = zi.declare("m Pa")
 
 #let T = misc_data.at("T")
 #let T_disp = zi.K(T, ..decimal_places(2))
@@ -37,6 +38,10 @@
 #let g_disp = m-s2(g)
 #let A = misc_data.at("A")
 #let A_disp = m2(A, ..sig_figs(3))
+#let slope = misc_data.at("slope")
+#let slope_disp = mPa(slope, ..decimal_places(0))
+#let intercept = misc_data.at("intercept")
+#let intercept_disp = zi.m(intercept, ..decimal_places(3))
 
 = Results
 
@@ -226,3 +231,47 @@ $ <eq_pressure_reciprocal>
   caption: [Quantities Calculated to Find Pressure and its Reciprocal]
 ) <tb_pressure_calculation>
 
+@fg_L_vs_P_inv plots $L$ versus $P^(-1)$.
+As more mass $m$ was put on the piston platform, the pressure $P$ of the enclosed gas increased, thereby decreasing the reciprocal of the pressure $P^(-1)$.
+At the same time, the height of the column of air in the cylinder $L$ decreased.
+
+Boyle's law states that if a fixed amount of gas is kept at a constant temperature, then its volume and absolute pressure will be inversely proportional.
+In the experiment, the temperature $T$ and the moles of gas enclosed $n$ were both kept roughly constant.
+Thus, the results of this experiment can be used to support or contradict Boyle's law.
+
+The ideal gas law, which implies Boyle's law, is given by @eq_ideal_gas_law.
+
+$
+P V = n R T
+$ <eq_ideal_gas_law>
+
+In the experiment, the volume of the enclosed gas $V$ consists of the volume of air in the cylinder $L A$ plus the volume of air in the bottle and hose $V_0$.
+That combined volume $V$ is given by @eq_total_volume.
+
+$
+V = V_0 + L A
+$ <eq_total_volume>
+
+Combining @eq_ideal_gas_law and @eq_total_volume and rearranging yields @eq_L_P_inv_linear_relation.
+
+$ P (V_0 + L A) = n R T $
+$ P L A = n R T - P V_0 $
+$ L = underbrace((n R T)/A, "slope") P^(-1) underbrace(-V_0/A, "y-intercept") $ <eq_L_P_inv_linear_relation>
+
+Notice that $L$ is linear with respect to $P^(-1)$.
+The slope of such a plot is given by @eq_slope, and the y-intercept is given by @eq_intercept.
+Since the data in @fg_L_vs_P_inv lie on a straight line as predicted, the experiment verifies Boyle's law.
+
+$ "slope" = (n R T)/A $ <eq_slope>
+$ "y-intercept" = -V_0/A $ <eq_intercept>
+
+The equation for the line of best fit for the data is given by @eq_linear_fit.
+The slope has a value of #slope_disp, and the y-intercept has a value of #intercept_disp.
+
+#figure(
+  image("media/L-v-P-inverse.svg"),
+  caption: [
+    Response of the Enclosed Gas to Additional Force
+    $ L = (#slope_disp) P^(-1) + (#intercept_disp) $ <eq_linear_fit>
+  ],
+) <fg_L_vs_P_inv>
