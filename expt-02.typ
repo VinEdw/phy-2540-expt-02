@@ -14,5 +14,23 @@
 
 = Results
 
+@tb_misc_quantities contains various quantities, both measured and given, that will be relevant to the analysis.
+They were collected in a table to assist with lookup.
+
+#figure(
+  {
+    let format = (none, auto)
+    show table: zero.format-table(..format)
+    table(
+      columns: format.len(),
+      table.header(
+        [Quantity],
+        [Value],
+      ),
+    )
+  },
+  caption: [Miscellaneous Quantities]
+) <tb_misc_quantities>
+
 = Analysis
 
