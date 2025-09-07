@@ -232,6 +232,14 @@ $ <eq_pressure_reciprocal>
   caption: [Quantities Calculated to Find Pressure and its Reciprocal]
 ) <tb_pressure_calculation>
 
+#figure(
+  image("media/L-v-P-inverse.svg"),
+  caption: [
+    Response of the Enclosed Gas to Additional Force
+    $ L = (#slope_disp) P^(-1) + (#intercept_disp) $ <eq_linear_fit>
+  ],
+) <fg_L_vs_P_inv>
+
 @fg_L_vs_P_inv plots $L$ versus $P^(-1)$.
 As more mass $m$ was put on the piston platform, the pressure $P$ of the enclosed gas increased, thereby decreasing the reciprocal of the pressure $P^(-1)$.
 At the same time, the height of the column of air in the cylinder $L$ decreased.
@@ -269,10 +277,3 @@ $ "y-intercept" = -V_0/A $ <eq_intercept>
 The equation for the line of best fit for the data is given by @eq_linear_fit.
 The slope has a value of #slope_disp, and the y-intercept has a value of #intercept_disp.
 
-#figure(
-  image("media/L-v-P-inverse.svg"),
-  caption: [
-    Response of the Enclosed Gas to Additional Force
-    $ L = (#slope_disp) P^(-1) + (#intercept_disp) $ <eq_linear_fit>
-  ],
-) <fg_L_vs_P_inv>
