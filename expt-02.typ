@@ -15,6 +15,8 @@
 #let degreeF = zi.declare($degree "F"$)
 #let inHg = zi.declare($"in" "Hg"$)
 #let mmHg = zi.declare($"mm" "Hg"$)
+#let J-molK = zi.declare("J/mol/K")
+#let m-s2 = zi.declare("m/s^2")
 
 #let T = misc_data.at("T")
 #let T_disp = zi.K(T, ..decimal_places(2))
@@ -24,6 +26,10 @@
 #let m_p_disp = zi.gram(m_p, ..decimal_places(1))
 #let D = misc_data.at("D")
 #let D_disp = zi.mm(D)
+#let R = misc_data.at("R")
+#let R_disp = J-molK(R)
+#let g = misc_data.at("g")
+#let g_disp = m-s2(g)
 
 = Results
 
@@ -57,6 +63,10 @@ They were collected in a table to assist with lookup.
 $m_p$ is the mass of the piston & platform, taken from the label on the gas law apparatus.
 $D$ is the piston diameter, taken from the label on the gas law apparatus.
 
+Some constants that were needed in the analysis were the universal gas constant $R$ and the acceleration due to gravity $g$.
+Both values were taken from the lab manual.
+Note that the value of $g$ used is for the science building, where the experiment was performed.
+
 #figure(
   {
     let format = (none, auto)
@@ -71,6 +81,8 @@ $D$ is the piston diameter, taken from the label on the gas law apparatus.
       $P_0$, P_0_disp,
       $m_p$, m_p_disp,
       $D$, D_disp,
+      $R$, R_disp,
+      $g$, g_disp,
     )
   },
   caption: [Miscellaneous Quantities]
