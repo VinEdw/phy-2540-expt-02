@@ -9,6 +9,9 @@
   date: datetime(year: 2025, month: 9, day: 12),
 )
 
+#let misc_data = json("data/misc-data.json")
+#let raw_misc_data = json("data/raw-misc-data.json")
+
 = Results
 
 = Analysis
