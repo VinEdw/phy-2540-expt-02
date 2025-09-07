@@ -45,6 +45,8 @@
 #let intercept_disp = zi.m(intercept, ..decimal_places(3))
 #let n = misc_data.at("n")
 #let n_disp = zi.mol(n, ..sig_figs(3))
+#let V_0 = misc_data.at("V_0")
+#let V_0_disp = zi.liter(V_0, ..sig_figs(3))
 
 = Results
 
@@ -289,3 +291,13 @@ $
 n = ((#slope_disp) (#A_disp)) / ((#R_disp) (#T_disp)) = #n_disp
 $ <eq_mol_calculation>
 
+Rearranging @eq_intercept yields @eq_V_0, which can be used to find the volume of the 2-liter bottle and tubing $V_0$.
+Substituting in values gives #V_0_disp, as shown in @eq_V_0_calculation.
+This volume, slightly larger than #zi.liter(2), is consistent with the fact that a 2-liter bottle was used with a small connecting tube.
+
+$
+V_0 = -("y-intercept") A
+$ <eq_V_0>
+$
+V_0 = -(#intercept_disp) (#A_disp) dot zi.liter(1000)/m3(1) = #V_0_disp
+$ <eq_V_0_calculation>
