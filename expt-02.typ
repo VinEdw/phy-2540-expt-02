@@ -9,6 +9,8 @@
   date: datetime(year: 2025, month: 9, day: 12),
 )
 
+#let main_data_fname = "data/main-data.csv"
+
 #let misc_data = json("data/misc-data.json")
 #let raw_misc_data = json("data/raw-misc-data.json")
 
@@ -87,6 +89,39 @@ Note that the value of $g$ used is for the science building, where the experimen
   },
   caption: [Miscellaneous Quantities]
 ) <tb_misc_quantities>
+
+@tb_m_L contains the measurements of the mass put on the piston platform $m$ and the resulting length of the column of air in the cylinder $L$.
+#(csv(main_data_fname).len()-1) samples were collected all together.
+The piston-holding thumbscrew was used to keep the piston in place at the top of the cylinder while connecting the cylinder to the 2-liter bottle.
+After the connection was made, the thumbscrew was released and the piston dropped down slightly.
+If the piston continued to slide down, without stopping, it would have indicated that air was escaping from the cylinder, tubing, or bottle.
+After finding the location of the leak and patching it, the piston would need to be reset to its highest position and the bottle reconnected.
+However, a small amount of air leakage was unavoidable.
+Thus, care was taken to quickly measure $L$ after placing the slotted masses on the platform, only waiting a few seconds for the reading to stabilize before moving on to the next sample.
+
+#figure(
+  {
+    let format = (none,) + (auto,) * 2
+    show table: zero.format-table(..format)
+    table(
+      columns: format.len(),
+      table.header(
+        [Sample],
+        [$m$ (#zi.gram())],
+        [$L$ (#zi.mm())],
+      ),
+      ..csv_helper(
+        main_data_fname,
+        (
+          "sample",
+          "m",
+          "L",
+        )
+      ),
+    )
+  },
+  caption: [Samples of Mass Added and Air Column Length]
+) <tb_m_L>
 
 = Analysis
 
