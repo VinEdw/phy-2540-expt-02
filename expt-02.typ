@@ -137,3 +137,20 @@ $
 A = pi (#D_disp/2 dot zi.m(1)/zi.mm(1000))^2 = #A_disp
 $ <eq_area_calculation>
 
+@tb_pressure_calculation contains various quantities involved in finding the pressure of the gas $P$ and its reciprocal $P^(-1)$ at each sample.
+$M$ is the combined mass of the piston, platform, and the slotted masses put on the platform, calculated using @eq_combined_mass.
+
+$
+M = m + m_p
+$ <eq_combined_mass>
+
+#sample_calculation(name: [Sample 2 $M$])[
+  #let m = s("m")
+  #let m_disp = zi.gram(m, ..decimal_places(0))
+  #let M = s("M")
+  #let M_disp = zi.gram(M, ..decimal_places(0))
+
+  $ M = (#m_disp) + (#m_p_disp) $
+  $ M = #M_disp $
+]
+
