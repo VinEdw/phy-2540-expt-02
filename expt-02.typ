@@ -21,6 +21,7 @@
 #let J-molK = zi.declare("J/mol/K")
 #let m-s2 = zi.declare("m/s^2")
 #let m2 = zi.declare("m^2")
+#let m3 = zi.declare("m^3")
 #let Pa-1 = zi.declare("Pa^-1")
 #let mPa = zi.declare("m Pa")
 
