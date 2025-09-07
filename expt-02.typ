@@ -20,6 +20,8 @@
 #let mmHg = zi.declare($"mm" "Hg"$)
 #let J-molK = zi.declare("J/mol/K")
 #let m-s2 = zi.declare("m/s^2")
+#let m2 = zi.declare("m^2")
+#let Pa-1 = zi.declare("Pa^-1")
 
 #let T = misc_data.at("T")
 #let T_disp = zi.K(T, ..decimal_places(2))
