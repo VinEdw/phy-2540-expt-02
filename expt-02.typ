@@ -198,3 +198,31 @@ $ <eq_pressure_reciprocal>
   $ P^(-1) = #P_inv_disp $
 ]
 
+#figure(
+  {
+    let format = (none, decimal_places(0), decimal_places(2),) + (sig_figs(5),) * 2
+    show table: format-table(..format)
+    table(
+      columns: format.len(),
+      table.header(
+        [Sample],
+        [$M$ (#zi.gram())],
+        [$F_g$ (#zi.N())],
+        [$P$ (#zi.Pa())],
+        [$P^(-1)$ (#Pa-1())],
+      ),
+      ..csv_helper(
+        main_data_fname,
+        (
+          "sample",
+          "M",
+          "F_g",
+          "P",
+          "P_inv",
+        )
+      ),
+    )
+  },
+  caption: [Quantities Calculated to Find Pressure and its Reciprocal]
+) <tb_pressure_calculation>
+
