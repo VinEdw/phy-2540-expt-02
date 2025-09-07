@@ -20,6 +20,10 @@
 #let T_disp = zi.K(T, ..decimal_places(2))
 #let P_0 = misc_data.at("P_0")
 #let P_0_disp = zi.Pa(P_0, ..decimal_places(0))
+#let m_p = misc_data.at("m_p")
+#let m_p_disp = zi.gram(m_p, ..decimal_places(1))
+#let D = misc_data.at("D")
+#let D_disp = zi.mm(D)
 
 = Results
 
@@ -50,6 +54,9 @@ They were collected in a table to assist with lookup.
   $ <eq_pressure_conversion>
 ]
 
+$m_p$ is the mass of the piston & platform, taken from the label on the gas law apparatus.
+$D$ is the piston diameter, taken from the label on the gas law apparatus.
+
 #figure(
   {
     let format = (none, auto)
@@ -62,6 +69,8 @@ They were collected in a table to assist with lookup.
       ),
       $T$, T_disp,
       $P_0$, P_0_disp,
+      $m_p$, m_p_disp,
+      $D$, D_disp,
     )
   },
   caption: [Miscellaneous Quantities]
