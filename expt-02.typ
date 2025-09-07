@@ -43,6 +43,8 @@
 #let slope_disp = mPa(slope, ..decimal_places(0))
 #let intercept = misc_data.at("intercept")
 #let intercept_disp = zi.m(intercept, ..decimal_places(3))
+#let n = misc_data.at("n")
+#let n_disp = zi.mol(n, ..sig_figs(3))
 
 = Results
 
@@ -276,4 +278,14 @@ $ "y-intercept" = -V_0/A $ <eq_intercept>
 
 The equation for the line of best fit for the data is given by @eq_linear_fit.
 The slope has a value of #slope_disp, and the y-intercept has a value of #intercept_disp.
+
+Rearranging @eq_slope yields @eq_mol, which can be used to find the moles of gas enclosed $n$.
+Substituting in values gives #n_disp, as shown in @eq_mol_calculation.
+
+$
+n = ("slope" dot A) / (R T)
+$ <eq_mol>
+$
+n = ((#slope_disp) (#A_disp)) / ((#R_disp) (#T_disp)) = #n_disp
+$ <eq_mol_calculation>
 
