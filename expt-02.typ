@@ -9,6 +9,8 @@
 )
 
 #let main_data_fname = "data/main-data.csv"
+#let sample_row = csv(main_data_fname, row-type: dictionary).at(1)
+#let s(attr) = sample_row.at(attr)
 
 #let misc_data = json("data/misc-data.json")
 #let raw_misc_data = json("data/raw-misc-data.json")
