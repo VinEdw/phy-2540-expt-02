@@ -12,10 +12,27 @@
 #let misc_data = json("data/misc-data.json")
 #let raw_misc_data = json("data/raw-misc-data.json")
 
+#let degreeF = zi.declare($degree "F"$)
+
+#let T = misc_data.at("T")
+#let T_disp = zi.K(T, ..decimal_places(2))
+
 = Results
 
 @tb_misc_quantities contains various quantities, both measured and given, that will be relevant to the analysis.
 They were collected in a table to assist with lookup.
+
+#[
+  #let T_F = raw_misc_data.at("T")
+  #let T_F_disp = degreeF(T_F)
+
+  $T$ is the temperature of the room measured using a digital thermometer.
+  The temperature was initially measured as #T_F_disp, then converted to kelvins as show in @eq_temperature_conversion.
+
+  $
+  T = (5/9 (#T_F - 32) + 273.15) space.quarter #zi.K() = #T_disp
+  $ <eq_temperature_conversion>
+]
 
 #figure(
   {
@@ -27,6 +44,7 @@ They were collected in a table to assist with lookup.
         [Quantity],
         [Value],
       ),
+      $T$, T_disp,
     )
   },
   caption: [Miscellaneous Quantities]
