@@ -53,7 +53,7 @@ They are collected in a table to assist with lookup.
   #let P_0_weird_disp = inHg(P_0_weird)
 
   $P_0$ is the atmospheric pressure measured using a digital barometer.
-  The pressure was initially measured as #P_0_weird, then converted to pascals as shown in @eq_pressure_conversion.
+  The pressure was initially measured as #P_0_weird_disp, then converted to pascals as shown in @eq_pressure_conversion.
 
   $
   P_0 = (#P_0_weird_disp) dot (mmHg(25.4))/(inHg(1)) dot (zi.Pa(101325))/(mmHg(760)) = #P_0_disp
