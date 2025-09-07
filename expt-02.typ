@@ -31,6 +31,8 @@
 #let R_disp = J-molK(R)
 #let g = misc_data.at("g")
 #let g_disp = m-s2(g)
+#let A = misc_data.at("A")
+#let A_disp = m2(A, ..sig_figs(3))
 
 = Results
 
@@ -123,4 +125,13 @@ Thus, care was taken to quickly measure $L$ after placing the slotted masses on 
 ) <tb_m_L>
 
 = Analysis
+
+The cross-sectional area of the cylinder $A$ is given by @eq_area.
+Substituting in the diameter $D$ yields an area of #A_disp, as shown in @eq_area_calculation.
+$
+A = pi (D/2)^2
+$ <eq_area>
+$
+A = pi (#D_disp/2 dot zi.m(1)/zi.mm(1000))^2 = #A_disp
+$ <eq_area_calculation>
 
