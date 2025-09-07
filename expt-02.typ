@@ -156,3 +156,19 @@ $ <eq_combined_mass>
   $ M = #M_disp $
 ]
 
+$F_g$ is the force of gravity on the combined mass $M$, calculated using equation @eq_F_g.
+
+$
+F_g = M g
+$ <eq_F_g>
+
+#sample_calculation(name: [Sample 2 $F_g$])[
+  #let M = s("M")
+  #let M_disp = zi.gram(M, ..decimal_places(0))
+  #let F_g = s("F_g")
+  #let F_g_disp = zi.N(F_g, ..decimal_places(2))
+
+  $ F_g = (#M_disp dot zi.kg(1)/zi.gram(1000)) (#g_disp) $
+  $ F_g = #F_g_disp $
+]
+
