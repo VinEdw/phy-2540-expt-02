@@ -1,6 +1,5 @@
 #import "phys-conf.typ": conf, csv_helper, sample_calculation, sig_figs, decimal_places
-#import "@preview/zero:0.5.0"
-#import "@preview/zero:0.5.0": num, zi
+#import "@preview/zero:0.5.0": num, zi, format-table
 
 #show: conf.with(
   title: [Equation of State for an Ideal Gas],
@@ -72,7 +71,7 @@ Note that the value of $g$ used is for the science building, where the experimen
 #figure(
   {
     let format = (none, auto)
-    show table: zero.format-table(..format)
+    show table: format-table(..format)
     table(
       columns: format.len(),
       table.header(
@@ -102,7 +101,7 @@ Thus, care was taken to quickly measure $L$ after placing the slotted masses on 
 #figure(
   {
     let format = (none,) + (auto,) * 2
-    show table: zero.format-table(..format)
+    show table: format-table(..format)
     table(
       columns: format.len(),
       table.header(
