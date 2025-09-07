@@ -172,3 +172,29 @@ $ <eq_F_g>
   $ F_g = #F_g_disp $
 ]
 
+$P$ is the total pressure exerted on the gas, calculated using equation @eq_pressure.
+$P^(-1)$ is the reciprocal of the pressure $P$, calculated using equation @eq_pressure_reciprocal.
+
+$
+P = P_0 + F_g / A
+$ <eq_pressure>
+
+$
+P^(-1) = 1/P
+$ <eq_pressure_reciprocal>
+
+#sample_calculation(name: [Sample 2 $P$ & $P^(-1)$])[
+  #let F_g = s("F_g")
+  #let F_g_disp = zi.N(F_g, ..decimal_places(2))
+  #let P = s("P")
+  #let P_disp = zi.Pa(P, ..sig_figs(5))
+  #let P_inv = s("P_inv")
+  #let P_inv_disp = Pa-1(P_inv, ..sig_figs(5))
+
+  $ P = (#P_0_disp) + ((#F_g_disp)) / ((#A_disp)) $
+  $ P = #P_disp $
+
+  $ P^(-1) = 1/((#P_disp)) $
+  $ P^(-1) = #P_inv_disp $
+]
+
