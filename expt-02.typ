@@ -301,3 +301,26 @@ $ <eq_V_0>
 $
 V_0 = -(#intercept_disp) (#A_disp) dot zi.liter(1000)/m3(1) = #V_0_disp
 $ <eq_V_0_calculation>
+
+@tb_calculated_quantities provides a summary of all the calculated quantities that were not made for a single sample.
+
+#figure(
+  {
+    let format = (none, auto)
+    show table: format-table(..format)
+    table(
+      columns: format.len(),
+      table.header(
+        [Quantity],
+        [Value],
+      ),
+      $A$, A_disp,
+      $"slope"$, slope_disp,
+      $"y-intercept"$, intercept_disp,
+      $n$, n_disp,
+      $V_0$, V_0_disp,
+    )
+  },
+  caption: [Summary of Calculated Quantities]
+) <tb_calculated_quantities>
+
