@@ -13,9 +13,13 @@
 #let raw_misc_data = json("data/raw-misc-data.json")
 
 #let degreeF = zi.declare($degree "F"$)
+#let inHg = zi.declare($"in" "Hg"$)
+#let mmHg = zi.declare($"mm" "Hg"$)
 
 #let T = misc_data.at("T")
 #let T_disp = zi.K(T, ..decimal_places(2))
+#let P_0 = misc_data.at("P_0")
+#let P_0_disp = zi.Pa(P_0, ..decimal_places(0))
 
 = Results
 
@@ -34,6 +38,18 @@ They were collected in a table to assist with lookup.
   $ <eq_temperature_conversion>
 ]
 
+#[
+  #let P_0_weird = raw_misc_data.at("P_0")
+  #let P_0_weird_disp = inHg(P_0_weird)
+
+  $P_0$ is the atmospheric pressure measured using a digital barometer.
+  The pressure was initially measured as #P_0_weird, then converted to pascals as shown in @eq_pressure_conversion.
+
+  $
+  P_0 = (#P_0_weird_disp) dot (mmHg(25.4))/(inHg(1)) dot (zi.Pa(101325))/(mmHg(760)) = #P_0_disp
+  $ <eq_pressure_conversion>
+]
+
 #figure(
   {
     let format = (none, auto)
@@ -45,6 +61,7 @@ They were collected in a table to assist with lookup.
         [Value],
       ),
       $T$, T_disp,
+      $P_0$, P_0_disp,
     )
   },
   caption: [Miscellaneous Quantities]
