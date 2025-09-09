@@ -50,7 +50,7 @@
 
 = Results
 
-@tb_misc_quantities contains various quantities, both measured and given, that were relevant to the analysis.
+@tb_misc_quantities contains various quantities, both measured and provided, that were relevant to the analysis.
 They are collected in a table to assist with lookup.
 
 #[
@@ -78,7 +78,7 @@ They are collected in a table to assist with lookup.
 ]
 
 $m_p$ is the mass of the piston & platform, taken from the label on the gas law apparatus.
-$D$ is the piston diameter, taken from the label on the gas law apparatus.
+$D$ is the piston diameter, also taken from the label on the gas law apparatus.
 
 Some constants that were needed in the analysis were the universal gas constant $R$ and the acceleration due to gravity $g$.
 Both values were taken from the lab manual.
@@ -112,7 +112,7 @@ After the connection was made, the thumbscrew was released and the piston droppe
 If the piston continued to slide down, without stopping, it would have indicated that air was escaping from the cylinder, tubing, or bottle.
 After finding the location of the leak and patching it, the piston would need to be reset to its highest position and the bottle reconnected.
 However, a small amount of air leakage was unavoidable.
-Thus, care was taken to quickly measure $L$ after placing the slotted masses on the platform, only waiting a few seconds for the reading to stabilize before moving on to the next sample.
+Thus, care was taken to quickly measure $L$ after placing the slotted masses on the platform, only waiting about five seconds for the reading to stabilize before moving on to the next sample.
 
 #figure(
   {
@@ -249,7 +249,8 @@ $ <eq_pressure_reciprocal>
 ) <fg_L_vs_P_inv>
 
 @fg_L_vs_P_inv plots $L$ versus $P^(-1)$.
-As more mass $m$ was put on the piston platform, the pressure $P$ of the enclosed gas increased, thereby decreasing the reciprocal of the pressure $P^(-1)$.
+As more mass $m$ was put on the piston platform, the force exerted on the enclosed gas increased, thereby increasing the pressure $P$.
+As $P$ increased, the reciprocal of the pressure $P^(-1)$ decreased.
 At the same time, the height of the column of air in the cylinder $L$ decreased.
 
 Boyle's law states that if a fixed amount of gas is kept at a constant temperature, then its volume and absolute pressure will be inversely proportional.
@@ -269,7 +270,7 @@ $
 V = V_0 + L A
 $ <eq_total_volume>
 
-Combining @eq_ideal_gas_law and @eq_total_volume and rearranging yields @eq_L_P_inv_linear_relation.
+Combining @eq_ideal_gas_law with @eq_total_volume and rearranging yields @eq_L_P_inv_linear_relation.
 
 $ P (V_0 + L A) = n R T $
 $ P L A = n R T - P V_0 $
