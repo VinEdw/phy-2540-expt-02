@@ -1,3 +1,5 @@
+module Tmp
+
 using CSV
 using JSON3
 using DataFrames
@@ -86,4 +88,7 @@ function main()
     return
 end
 
-main()
+end
+
+using .Tmp
+Tmp.main()
