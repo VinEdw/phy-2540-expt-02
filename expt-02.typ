@@ -210,12 +210,14 @@ $ <eq_pressure_reciprocal>
 
 #figure(
   {
-    let format = (none, decimal_places(0), decimal_places(2),) + (sig_figs(5),) * 2
+    let format = (none,) + (auto,) * 2 + (decimal_places(0), decimal_places(2),) + (sig_figs(5),) * 2
     show table: format-table(..format)
     table(
       columns: format.len(),
       table.header(
         [Sample],
+        [$m$ (#zi.gram())],
+        [$L$ (#zi.mm())],
         [$M$ (#zi.gram())],
         [$F_g$ (#zi.N())],
         [$P$ (#zi.Pa())],
@@ -225,6 +227,8 @@ $ <eq_pressure_reciprocal>
         main_data_fname,
         (
           "sample",
+          "m",
+          "L",
           "M",
           "F_g",
           "P",
@@ -233,7 +237,7 @@ $ <eq_pressure_reciprocal>
       ),
     )
   },
-  caption: [Quantities Calculated to Find Pressure and its Reciprocal]
+  caption: [Quantities Used to Find Pressure and its Reciprocal]
 ) <tb_pressure_calculation>
 
 #figure(
