@@ -70,7 +70,8 @@ function main()
 
 
     # Plot the L vs 1/P
-    plt = plot(xlabel=L"P^{-1}~(\mathrm{Pa^{-1}})", ylabel=L"L~(\mathrm{m})", legend=false)
+    plt = plot(xlabel=L"Reciprocal of Absolute Gas Pressure $P^{-1}~(\mathrm{Pa^{-1}})$", ylabel=L"Air Column Length $L~(\mathrm{m})$")
+    plot!(plt, size=(600, 600), legend=false)
     plot!(plt, P_inv, L, seriestype=:scatter)
     Plots.abline!(plt, slope, intercept)
 
