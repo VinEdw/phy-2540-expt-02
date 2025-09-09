@@ -307,7 +307,7 @@ $
 V_0 = -(#intercept_disp) (#A_disp) dot zi.liter(1000)/m3(1) = #V_0_disp
 $ <eq_V_0_calculation>
 
-@tb_calculated_quantities provides a summary of all the calculated quantities that were not made for a single sample.
+@tb_calculated_quantities provides a summary of all the calculated quantities that were not made for an individual sample in particular.
 
 #figure(
   {
