@@ -90,7 +90,7 @@ Note that the value of $g$ used is for the science building, where the experimen
       $g$, g,
     )
   },
-  caption: [Miscellaneous Quantities]
+  caption: [Miscellaneous Measured Quantities and Constants]
 ) <tb_misc_quantities>
 
 @tb_m_L contains the measurements of the mass put on the piston platform $m$ and the resulting length of the column of air in the cylinder $L$.
