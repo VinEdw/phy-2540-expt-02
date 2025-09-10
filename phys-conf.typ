@@ -46,10 +46,10 @@
   show raw: set text(font: "New Computer Modern Mono")
   show heading: set block(above: 1.4em, below: 1em)
 
+  // Figures
+  set figure.caption(position: top)
+
   // Tables
-  show figure.where(
-    kind: table
-  ): set figure.caption(position: top)
   set table(stroke: (x, y) => (
     top: if y == 0 { 1pt } else if y == 1 { none } else { 0pt },
     bottom: if y > 0 { 1pt } else { 0.5pt },
