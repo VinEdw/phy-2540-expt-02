@@ -224,7 +224,7 @@ $ <eq_pressure_reciprocal>
 #figure(
   image("media/L-v-P-inverse.svg"),
   caption: [
-    Response of the Enclosed Gas to Additional Force
+    Data for Enclosed Gas in Cylinder Connected to 2-Liter Bottle
     $ L = (#slope) P^(-1) + (#intercept) $ <eq_linear_fit>
   ],
 ) <fg_L_vs_P_inv>
